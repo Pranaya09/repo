@@ -32,6 +32,12 @@ version = "2022.10"
 project {
 
     buildType(BuildRepo)
+    buildType(BuildRepoNext)
+
+    sequential {
+        buildType(BuildRepo)
+        buildType(BuildRepoNext)
+    }
 }
 
 object BuildRepo : BuildType({
@@ -54,6 +60,30 @@ object BuildRepo : BuildType({
 
     }
 
+
+    features {
+        perfmon {
+        }
+    }
+})
+object BuildRepoNext : BuildType({
+    name = "Build_repositoryNext"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+
+        script {
+            scriptContent = "echo HelloWorld"
+        }
+
+    }
+   // dependencies{
+    //    snapshot(BuildRepo){}
+   // }
+
     triggers {
         vcs {
         }
@@ -64,3 +94,4 @@ object BuildRepo : BuildType({
         }
     }
 })
+
