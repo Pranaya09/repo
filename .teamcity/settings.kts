@@ -33,7 +33,7 @@ project {
 }
 
 object BuildRepo : BuildType({
-    name = "Build_repoo"
+    name = "Build_repository"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -46,11 +46,7 @@ object BuildRepo : BuildType({
             }
             noProfile = false
         }
-    }
-    steps{
-        script {
-            scriptContent = "echo 'Hello world!'"
-        }
+
     }
 
     triggers {
