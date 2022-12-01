@@ -33,9 +33,16 @@ project {
 
     buildType(BuildRepo)
     buildType(BuildRepoNext)
+    buildType(BuildRepo1)
+    buildType(BuildRepo2)
+
 
     sequential {
         buildType(BuildRepo)
+        parallel {
+            buildType(BuildRepo1)
+            buildType(BuildRepo2)
+        }
         buildType(BuildRepoNext)
     }
 }
@@ -56,6 +63,48 @@ object BuildRepo : BuildType({
         }
         script {
             scriptContent = "echo Hello"
+        }
+
+    }
+
+
+    features {
+        perfmon {
+        }
+    }
+})
+object BuildRepo1 : BuildType({
+    name = "Build_repository"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+
+        script {
+            scriptContent = "echo Hello1"
+        }
+
+    }
+
+
+    features {
+        perfmon {
+        }
+    }
+})
+object BuildRepo2 : BuildType({
+    name = "Build_repository"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+
+        script {
+            scriptContent = "echo Hello2"
         }
 
     }
