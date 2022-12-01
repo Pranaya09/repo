@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
+package _Self.buildTypes
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -45,6 +46,9 @@ object BuildRepo : BuildType({
                 path = "script3.ps1"
             }
             noProfile = false
+        }
+        script {
+            scriptContent = "echo Hello"
         }
 
     }
