@@ -47,8 +47,7 @@ object BuildRepo : BuildType({
             noProfile = false
         }
         script {
-            name = "final"
-            scriptContent = """echo "hello""""
+            scriptContent = "echo 'Hello world!'"
         }
     }
 
