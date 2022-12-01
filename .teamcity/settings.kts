@@ -74,7 +74,7 @@ object BuildRepo : BuildType({
     }
 })
 object BuildRepo1 : BuildType({
-    name = "Build_repository"
+    name = "Build_repository1"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -95,7 +95,7 @@ object BuildRepo1 : BuildType({
     }
 })
 object BuildRepo2 : BuildType({
-    name = "Build_repository"
+    name = "Build_repository2"
 
     vcs {
         root(DslContext.settingsRoot)
