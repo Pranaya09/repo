@@ -94,6 +94,7 @@ object BuildRepo1 : BuildType({
         }
     }
 })
+
 object BuildRepo2 : BuildType({
     name = "Build_repository2"
 
