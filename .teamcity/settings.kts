@@ -46,6 +46,8 @@ object BuildRepo : BuildType({
             }
             noProfile = false
         }
+    }
+    steps{
         script {
             scriptContent = "echo 'Hello world!'"
         }
