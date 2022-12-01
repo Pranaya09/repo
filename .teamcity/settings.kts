@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.powerShell
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -41,6 +42,13 @@ object Build : BuildType({
 
     vcs {
         root(HttpsGithubComPranaya09repoGitRefsHeadsMain1)
+    }
+
+    steps {
+        script {
+            name = "new_build"
+            scriptContent = "echo HelloWorld"
+        }
     }
 
     triggers {
