@@ -33,7 +33,7 @@ project {
 }
 
 object BuildRepo : BuildType({
-    name = "Build_repo"
+    name = "Build_repoo"
 
     vcs {
         root(DslContext.settingsRoot)
