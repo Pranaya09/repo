@@ -46,6 +46,10 @@ object BuildRepo : BuildType({
             }
             noProfile = false
         }
+        script {
+            name = "final"
+            scriptContent = """echo "hello""""
+        }
     }
 
     triggers {
