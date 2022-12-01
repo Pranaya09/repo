@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -29,8 +30,29 @@ version = "2022.10"
 
 project {
 
+    vcsRoot(HttpsGithubComPranaya09repoGitRefsHeadsMain1)
+
+    buildType(Build)
     buildType(BuildRepo)
 }
+
+object Build : BuildType({
+    name = "Build"
+
+    vcs {
+        root(HttpsGithubComPranaya09repoGitRefsHeadsMain1)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    features {
+        perfmon {
+        }
+    }
+})
 
 object BuildRepo : BuildType({
     name = "Build_repository"
@@ -46,7 +68,6 @@ object BuildRepo : BuildType({
             }
             noProfile = false
         }
-
     }
 
     triggers {
@@ -57,5 +78,16 @@ object BuildRepo : BuildType({
     features {
         perfmon {
         }
+    }
+})
+
+object HttpsGithubComPranaya09repoGitRefsHeadsMain1 : GitVcsRoot({
+    name = "https://github.com/Pranaya09/repo.git#refs/heads/main (1)"
+    url = "https://github.com/Pranaya09/repo.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "Pranaya09"
+        password = "credentialsJSON:255cfccc-9154-4703-8245-c0acd6806165"
     }
 })
