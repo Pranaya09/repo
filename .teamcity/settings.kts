@@ -87,6 +87,7 @@ object BuildRepoNext : BuildType({
     triggers {
         vcs {
         }
+
     }
 
     features {
