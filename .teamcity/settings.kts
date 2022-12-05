@@ -103,7 +103,7 @@ object BuildRepoNext : BuildType({
     steps {
 
         script {
-            scriptContent = "echo HelloWorld"
+            scriptContent = "echo HellooWorld"
         }
 
     }
