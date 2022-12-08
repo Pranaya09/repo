@@ -59,7 +59,7 @@ object BuildRepo1 : BuildType({
     steps {
 
         script {
-            scriptContent = "%build.number% echo Hello1"
+            scriptContent = "echo %build.number% Hello1"
         }
 
     }
