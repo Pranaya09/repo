@@ -36,7 +36,6 @@ object BuildRepo : BuildType({
             scriptMode = file {
                 path = "script3.ps1"
             }
-            noProfile = false
         }
         script {
             scriptContent = "echo Hello"
@@ -60,7 +59,7 @@ object BuildRepo1 : BuildType({
     steps {
 
         script {
-            scriptContent = "echo Hello1"
+            scriptContent = "%build.number% echo Hello1"
         }
 
     }
