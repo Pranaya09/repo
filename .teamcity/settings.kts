@@ -103,13 +103,11 @@ object BuildRepoNext : BuildType({
     steps {
 
         script {
-            scriptContent = "echo HellooWorld"
+            scriptContent = "echo HelloooWorld"
         }
 
     }
-    // dependencies{
-    //    snapshot(BuildRepo){}
-    // }
+
 
     triggers {
         vcs {
