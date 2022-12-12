@@ -28,6 +28,7 @@ object BuildRepo : BuildType({
     name = "Build_repository"
 
     buildNumberPattern = "%build.number%"
+    println(buildNumberPattern)
 
     vcs {
         root(DslContext.settingsRoot)
