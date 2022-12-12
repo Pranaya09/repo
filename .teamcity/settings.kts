@@ -27,8 +27,8 @@ project {
 object BuildRepo : BuildType({
     name = "Build_repository"
 
-    buildNumberPattern = "%build.counter%"
-    println(buildNumberPattern)
+   // buildNumberPattern = "%build.counter%"
+    // println(buildNumberPattern)
 
     vcs {
         root(DslContext.settingsRoot)
