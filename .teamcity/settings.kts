@@ -27,7 +27,7 @@ project {
 object BuildRepo : BuildType({
     name = "Build_repository"
 
-    buildNumberPattern = "%build.number%"
+    buildNumberPattern = "%build.counter%"
     println(buildNumberPattern)
 
     vcs {
