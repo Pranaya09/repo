@@ -27,6 +27,8 @@ project {
 object BuildRepo : BuildType({
     name = "Build_repository"
 
+    buildNumberPattern = "%build.number%"
+
     vcs {
         root(DslContext.settingsRoot)
     }
@@ -59,8 +61,9 @@ object BuildRepo1 : BuildType({
     steps {
 
         script {
-            scriptContent = "echo %build.number% Hello1"
+            scriptContent = "echo Hello1"
         }
+
 
     }
 
